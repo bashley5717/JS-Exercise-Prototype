@@ -91,6 +91,11 @@ console.log(bob.stomach);
     this.odometer = 0;
   }
   
+  Car.prototype.fill = function(gallons){
+    return this.tank + gallons;
+
+  }
+  const honda = new Car{}
   
   /*
     TASK 3
@@ -99,7 +104,9 @@ console.log(bob.stomach);
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
+ function Baby(name, age, favoriteToy) {
+   Person.call(this, name, age)
+   
    
   }
  
@@ -107,10 +114,10 @@ console.log(bob.stomach);
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1.  Implicit binding - the most common one.  it applies to objects with methods. refering to the left of the dot will tell you what 'this' refers to
+    2.  Explicit binding - we can set this to point to certain values using call, apply, or bind.
+    3.  New binding - this will create a new object that 'this' will point to
+    4.  window binding - if we dont give 'this' context it will return the window object.
   */
   
   
